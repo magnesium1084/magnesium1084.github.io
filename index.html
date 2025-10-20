@@ -3,11 +3,79 @@
 <head>
   <title>magnesium</title>
   <style>
-    html, body { margin: 0; height: 100%; }
-    iframe { width: 100%; height: 100%; border: none; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 32px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px #ccc;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .readme {
+      margin-bottom: 24px;
+      color: #444;
+      line-height: 1.6;
+    }
+    .nav {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .nav button {
+      margin: 0 10px;
+      padding: 10px 30px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 5px;
+      background: #0066cc;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .nav button:hover {
+      background: #003366;
+    }
+    #embedFrame {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-top: 16px;
+      background: #fff;
+    }
   </style>
+  <script>
+    function showPage(url) {
+      document.getElementById('embedFrame').src = url;
+    }
+    window.onload = function() {
+      showPage('https://sonix53.github.io/games.html'); // Default section
+    };
+  </script>
 </head>
 <body>
-  <iframe src="https://sonix53.github.io/games.html"></iframe>
+  <div class="container">
+    <h1>Welcome to Magnesium!</h1>
+    <div class="readme">
+      <p>
+        This is the homepage for Magnesium. Explore games and other content using the buttons below.<br>
+        Magnesium brings together fun projects and useful resources. Enjoy browsing!
+      </p>
+    </div>
+    <div class="nav">
+      <button onclick="showPage('https://sonix53.github.io/games.html')">Games</button>
+      <button onclick="showPage('https://sonix53.github.io/about.html')">About</button>
+      <button onclick="showPage('https://sonix53.github.io/contact.html')">Contact</button>
+      <!-- Add more buttons as you create more pages -->
+    </div>
+    <iframe id="embedFrame"></iframe>
+  </div>
 </body>
 </html>
